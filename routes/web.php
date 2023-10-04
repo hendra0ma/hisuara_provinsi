@@ -552,3 +552,13 @@ Route::get('/ganti-domain-kota',function(){
        ]);
     }
 });
+Route::get('/ganti-domain-provinsi',function(){
+    $domain = ProvinceDomain::get();
+    foreach($domain as $dom){
+        $exDomain = explode('.',$dom->domain);
+        $newDomain = $exDomain[0].".".$exDomain[1].".hisuara.id";
+        ProvinceDomain::where('id',$dom->id)->update([
+        "domain"=>$newDomain
+       ]);
+    }
+});
