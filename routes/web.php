@@ -547,5 +547,5 @@ Route::get('/ganti-domain-kota',function(){
     foreach($domain as $dom){
         $exDomain = explode('.',$dom->domain);
     }
-    dump($exDomain);
+    dump($exDomain[3]);
 });
