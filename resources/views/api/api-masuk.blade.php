@@ -14,9 +14,7 @@ foreach ($kotas as $hehe) :
     $url = "https://".$hehe->domain."/api/public/get-voice?jenis=suara_masuk";
 
     $voices = Cache::get($url, function () use ($client, $url) {
-        try{
-
-
+     try{
         $response = $client->request('GET', $url, [
             'headers' => [
                                             'Authorization' => 'Bearer '.'123789',
@@ -33,6 +31,7 @@ foreach ($kotas as $hehe) :
     }catch(RequestException $e){
         $voices = "";
         Cache::put($url, $voices, 60);
+        return $voices;
     }
     });
     array_push($dataApi, $voices);
