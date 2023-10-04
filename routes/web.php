@@ -542,7 +542,10 @@ Route::get('/cek-domain',function(){
    }
 });
 
-// Route::get('/redis',function(){
-//     $redis = Redis::incr('p');
-//     return $redis;
-// });
+Route::get('/ganti-domain-kota',function(){
+    $domain = RegenciesDomain::get();
+    foreach($domain as $dom){
+        $exDomain = explode('.',$dom->domain);
+    }
+    dump($exDomain);
+});
