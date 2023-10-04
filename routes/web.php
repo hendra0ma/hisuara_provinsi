@@ -546,7 +546,7 @@ Route::get('/ganti-domain-kota',function(){
     $domain = RegenciesDomain::get();
     foreach($domain as $dom){
         $exDomain = explode('.',$dom->domain);
-        $newDomain = $exDomain[0].".".$exDomain[1].".".$exDomain[2].".hisuara.id";
+        $newDomain = $exDomain[1].".".$exDomain[2].".".$exDomain[0].".hisuara.id";
        RegenciesDomain::where('id',$dom->id)->update([
         "domain"=>$newDomain
        ]);
