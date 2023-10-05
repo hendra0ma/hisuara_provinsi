@@ -54,6 +54,7 @@ foreach ($kotas as $hehe) :
                 
 
 @if($voices == "")
+@else
 <script>
     
     /*chart-pie*/
