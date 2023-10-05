@@ -41,7 +41,7 @@ foreach ($kotas as $hehe) :
     <td>0</td>
     <td>0</td>
     <td>0</td>
-    <td>0</td>
+   
     @else
 
         @foreach($voices as $vcs)
