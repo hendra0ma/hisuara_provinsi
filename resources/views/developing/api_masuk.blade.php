@@ -10,18 +10,25 @@ $client = new GuzzleHttp\Client();
 $dataApi = [];
 $i = 0;
 foreach ($kotas as $hehe) : 
-    $url = "https://".$hehe->domain."/api/public/get-voice?jenis=suara_masuk";
-    $voices = Cache::get($url, function () use ($client, $url) {
-        $response = $client->request('GET', $url, [
-            'headers' => [
-            'Authorization' => 'Bearer '.'123789',
-            'Accept' => 'application/json',
-        ],]);
-        $voices = json_decode($response->getBody());
-        Cache::put($url, $voices, 60 * 5);
-        return $voices;
-    });
-    array_push($dataApi, $voices);
+    $a = 1;
+    if ($a != 2) {
+        $url = "https://".$hehe->domain."/api/public/get-voice?jenis=suara_masuk";
+        $voices = Cache::get($url, function () use ($client, $url) {
+            $response = $client->request('GET', $url, [
+                'headers' => [
+                'Authorization' => 'Bearer '.'123789',
+                'Accept' => 'application/json',
+            ],]);
+            $voices = json_decode($response->getBody());
+            Cache::put($url, $voices, 60 * 5);
+            return $voices;
+        });
+        array_push($dataApi, $voices);
+    }else{
+        $voices = "";
+    }
+  
+
 ?>
 <tr>
     <th scope="row"> 
@@ -29,9 +36,19 @@ foreach ($kotas as $hehe) :
             <?= $hehe->name  ?>
         </a>      
     </th>
-    @foreach($voices as $vcs)
-    <td>{{$vcs->voice}}</td>
-    @endforeach
+
+    @if($voices == "")
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0</td>
+    @else
+
+        @foreach($voices as $vcs)
+        <td>{{$vcs->voice}}</td>
+        @endforeach
+
+    @endif
 </tr>
 <?php endforeach; ?>
                 
