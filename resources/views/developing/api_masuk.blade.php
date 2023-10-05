@@ -10,11 +10,6 @@ $client = new GuzzleHttp\Client();
 $dataApi = [];
 $i = 0;
 foreach ($kotas as $hehe) : 
-
-
-    echo $hehe->domain;
-    die;
-
     $a = 1;
     if ($a == 1) {
         $voices = "";
