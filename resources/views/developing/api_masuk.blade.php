@@ -53,6 +53,7 @@ foreach ($kotas as $hehe) :
 <?php endforeach; ?>
                 
 
+@if($voices == "")
 <script>
     
     /*chart-pie*/
@@ -226,3 +227,4 @@ for(let items of arr){
     @endforeach
 
 </script>   
+@endif
