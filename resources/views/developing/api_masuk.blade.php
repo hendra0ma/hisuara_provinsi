@@ -32,7 +32,7 @@ foreach ($kotas as $hehe) :
 ?>
 <tr>
     <th scope="row"> 
-        <a href="https://{{$hehe->domain}}/ceksetup"target="_blank">
+        <a href="https://{{$hehe->domain}}/ceksetup">
             <?= $hehe->name  ?>
         </a>      
     </th>
