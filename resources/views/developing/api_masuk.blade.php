@@ -11,7 +11,9 @@ $dataApi = [];
 $i = 0;
 foreach ($kotas as $hehe) : 
     $a = 1;
-    if ($a != 2) {
+    if ($a == 1) {
+        $voices = "";
+    }else{
         $url = "https://".$hehe->domain."/api/public/get-voice?jenis=suara_masuk";
         $voices = Cache::get($url, function () use ($client, $url) {
             $response = $client->request('GET', $url, [
@@ -24,8 +26,6 @@ foreach ($kotas as $hehe) :
             return $voices;
         });
         array_push($dataApi, $voices);
-    }else{
-        $voices = "";
     }
   
 
