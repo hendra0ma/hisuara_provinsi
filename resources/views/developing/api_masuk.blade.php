@@ -2,6 +2,9 @@
 use Illuminate\Support\Facades\Cache;
 
 $config = App\Models\Config::first();
+// $kotas = App\Models\Regency::join('regency_domains','regency_domains.regency_id','=','regencies.id')
+//     ->where('regencies.province_id', $config->provinces_id)
+//     ->get();
 $kotas = App\Models\Regency::join('regency_domains','regency_domains.regency_id','=','regencies.id')
     ->where('regencies.province_id', $config->provinces_id)
     ->get();
@@ -10,15 +13,16 @@ $client = new GuzzleHttp\Client();
 $dataApi = [];
 $i = 0;
 foreach ($kotas as $hehe) : 
-    $a = 1;
-    if ($a == 1) {
+    $a = 3674;
+    if ($a != $hehe->regency_id) {
         $voices = "";
+        // var_dump($a);
     }else{
         $url = "https://".$hehe->domain."/api/public/get-voice?jenis=suara_masuk";
         $voices = Cache::get($url, function () use ($client, $url) {
             $response = $client->request('GET', $url, [
                 'headers' => [
-                'Authorization' => 'Bearer '.'123789',
+                // 'Authorization' => 'Bearer '.'123789',
                 'Accept' => 'application/json',
             ],]);
             $voices = json_decode($response->getBody());
@@ -26,6 +30,7 @@ foreach ($kotas as $hehe) :
             return $voices;
         });
         array_push($dataApi, $voices);
+      
     }
   
 
