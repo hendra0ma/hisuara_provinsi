@@ -149,15 +149,15 @@ for(let items of arr){
   
   for (let item of items){
   	switch(item.candidate){
-  	case 'Paslon 1':
+  	case 'Anies':
     	paslon1 += item.voice;
     break;
     
-    case 'Paslon 2':
+    case 'Ganjar':
     	paslon2 += item.voice;
     break;
     
-    case 'Paslon 3':
+    case 'Prabowo':
     	paslon3 += item.voice;
     break;
     
