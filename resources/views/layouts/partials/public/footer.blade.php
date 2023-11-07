@@ -1,7 +1,11 @@
 <div class="container" style="margin-top: -25px;">
     <div class="card bg-primary rounded-0">
         <div class="card-body text-center">
-            <h5 class="card-title"><img width="150px" src="../../assets/images/brand/logo.png" alt=""></h5>
+         
+            <div style="display:inline-block" class="bg-dark p-2 rounded-2 shadow">
+                        <img style="width: 100px;" src="https://pilpres.banten.tangerang-selatan.hisuara.id/images/logo/hisuara.png" alt="">
+                    </div>
+           
             <div class="row no-gutters mx-auto mt-5" style="width: 350px;">
                 <div class="col"><a href="https://www.facebook.com/sharer.php?u=https://pilpres.banten.rekapitung.id/index" type="button" class="rounded-0 btn btn-facebook"><i class="fa fa-facebook me-2"></i>Facebook</a></div>
                 <div class="col"><a href="http://twitter.com/share?text=Hallo Saya Sudah Melihat Hasil Perhitungan Rekapitung Dan Mengajak Anda Untuk Mengawasi Jalannya Perhitungan Suara Salam Demokrasi Klik Tautan  &amp;url=https://pilpres.banten.rekapitung.id/index&amp;hashtags=survey" type="button" class="rounded-0 btn btn-twitter"><i class="fa fa-twitter me-2"></i>Twitter</a></div>

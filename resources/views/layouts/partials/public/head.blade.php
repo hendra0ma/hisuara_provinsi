@@ -109,9 +109,9 @@ use App\Models\Paslon;
     <div class="container" style="margin-top: -60px;">
         <div class="row mt-5">
             <div class="col-md text-center mt-5 ">
-                <h4 class="text-uppercase fw-bold">
-                    <img style="width: 100px;" src="{{url('')}}/assets/images/brand/logo-2.png" alt="">
-                </h4>
+            <div style="display:inline-block" class="bg-dark p-2 rounded-2 shadow">
+                        <img style="width: 100px;" src="https://pilpres.banten.tangerang-selatan.hisuara.id/images/logo/hisuara.png" alt="">
+                    </div>
             </div>
         </div>
 
